@@ -1,0 +1,995 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>UD Lanzarote Base — Presentación Entrenadores 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,600;0,700;0,800;0,900;1,400;1,700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body class="has-cursor">
+
+<!-- CURSOR -->
+<div class="cursor"><div class="cursor-dot"></div><div class="cursor-ring"></div></div>
+
+<!-- PROGRESS -->
+<div id="progress"></div>
+
+<!-- NAV DOTS -->
+<nav class="nav" id="nav"></nav>
+
+<!-- QUICKMENU (rellenado por JS) -->
+<nav id="quickmenu"></nav>
+
+<!-- WHATSAPP FLOTANTE -->
+<a id="wa-float" href="https://wa.me/34672802334?text=Hola%20Dani%2C%20soy%20entrenador%20de%20UD%20Lanzarote%20Base%20y%20tengo%20una%20duda%20sobre%20el%20proyecto." target="_blank" rel="noopener noreferrer">
+  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38c1.44.79 3.06 1.2 4.79 1.2h.01c5.46 0 9.91-4.45 9.91-9.91S17.5 2 12.04 2zm5.8 14.14c-.24.68-1.4 1.3-1.93 1.35-.5.05-1.05.24-3.53-.74-2.98-1.19-4.9-4.2-5.05-4.4-.15-.19-1.22-1.62-1.22-3.1 0-1.47.77-2.19 1.05-2.49.27-.3.6-.37.8-.37h.57c.19 0 .43-.03.67.51.24.55.83 1.9.9 2.04.07.14.12.3.02.49-.1.19-.15.3-.3.46-.15.16-.31.36-.44.48-.14.14-.3.29-.13.58.17.29.75 1.25 1.62 2.02 1.11.99 2.05 1.3 2.34 1.44.29.14.47.12.64-.07.17-.19.72-.84.92-1.13.19-.28.38-.24.63-.14.26.1 1.62.77 1.9.9.28.14.46.2.53.32.07.12.07.7-.17 1.38z"/></svg>
+  Duda directa
+</a>
+
+<!-- ════════════════════════════════════════════════════
+     1 · PORTADA — #portada
+════════════════════════════════════════════════════ -->
+<section class="slide" id="portada" style="background:var(--blue-d); flex-direction:column; text-align:center;">
+  <canvas id="hero-cv" style="position:absolute;inset:0;width:100%;height:100%;z-index:1;pointer-events:none;"></canvas>
+  <div style="position:absolute;inset:0;background:radial-gradient(ellipse 70% 50% at 50% 40%, rgba(10,78,150,.4) 0%, transparent 70%); z-index:0;"></div>
+  <div style="position:relative;z-index:2;display:flex;flex-direction:column;align-items:center;max-width:760px;">
+    <img class="rv" style="width:110px;height:auto;filter:drop-shadow(0 8px 40px rgba(0,0,0,.6)) drop-shadow(0 0 20px rgba(201,162,39,.3));animation:float 4s ease-in-out infinite;margin-bottom:22px;" src="assets/logos/crest-official.png" alt="UD Lanzarote">
+    <div class="rv d1" style="width:48px;height:2px;background:rgba(201,162,39,.45);border-radius:2px;margin:0 auto 18px"></div>
+    <div class="rv d2" style="display:flex;flex-direction:column;align-items:center;gap:0;line-height:1;margin:0 auto">
+      <div style="font-family:'Montserrat',sans-serif;font-weight:900;font-size:clamp(46px,8vw,104px);letter-spacing:-2px;line-height:1;display:flex;align-items:baseline;gap:0.18em;filter:drop-shadow(0 4px 24px rgba(0,0,0,.5))">
+        <span style="color:#FFFFFF">UD</span>
+        <span style="color:#D71920">Lanzarote</span>
+      </div>
+      <div style="font-family:'Montserrat',sans-serif;font-weight:900;font-size:clamp(24px,4.2vw,56px);letter-spacing:6px;text-transform:uppercase;color:rgba(255,255,255,.95);line-height:1;margin-top:2px;filter:drop-shadow(0 2px 12px rgba(0,0,0,.4))">base<span style="color:#C9A227">.</span></div>
+    </div>
+    <div class="rv d3" style="width:48px;height:2px;background:rgba(201,162,39,.45);border-radius:2px;margin:18px auto 0"></div>
+    <div class="rv d3" style="font-family:'Montserrat',sans-serif;font-weight:700;font-size:10px;letter-spacing:4px;text-transform:uppercase;color:var(--gold);margin-bottom:8px;margin-top:16px">Presentación interna para entrenadores</div>
+    <p class="rv d3" style="font-size:14px;color:rgba(255,255,255,.5);letter-spacing:.5px;">Proyecto deportivo · Cantera 2026–2028</p>
+    <p class="rv d4" style="font-family:'Montserrat',sans-serif;font-weight:700;font-size:clamp(17px,2vw,22px);color:var(--white);line-height:1.4;margin-top:28px;max-width:520px;">La grandeza se forma en la base.<br>Y se construye cada día en el entrenamiento.</p>
+    <div class="rv d5" style="display:flex;flex-wrap:wrap;justify-content:center;gap:12px;margin-top:40px;">
+      <button class="sbtn primary" data-target="contenido">Entrar</button>
+      <button class="sbtn ghost-dark" data-target="contenido">Ver contenidos</button>
+      <a class="sbtn wa" href="https://wa.me/34672802334?text=Hola%20Dani%2C%20soy%20entrenador%20de%20UD%20Lanzarote%20Base%20y%20tengo%20una%20duda%20sobre%20el%20proyecto." target="_blank" rel="noopener noreferrer">Contactar con Dirección Deportiva</a>
+      <button class="sbtn ghost-dark" data-target="comunicacion">Enviar una sugerencia</button>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════════════════
+     2 · MAPA DE TRABAJO — #contenido
+════════════════════════════════════════════════════ -->
+<section class="slide" id="contenido" style="background:var(--black); flex-direction:column; padding-top:100px; padding-bottom:56px;">
+  <div class="wm-crest top-right"><img src="assets/logos/crest-official.png" alt=""></div>
+  <span class="eyebrow gold rv">Centro de navegación</span>
+  <h2 class="headline white rv d1">Mapa de trabajo <em>del entrenador</em></h2>
+  <div class="rule rv d1"></div>
+  <p class="body-text light rv d2" style="max-width:640px;">Accede a cada pilar, metodología y herramienta del proyecto. Esta web no está pensada solo para verla una vez: está pensada para consultarla durante la temporada.</p>
+
+  <div class="dash-grid rv d3">
+    <details class="dash-card">
+      <summary>
+        <span class="dash-num">01</span><span class="dash-ico">🧭</span>
+        <span class="dash-title-wrap"><span class="dash-title">Captación</span><span class="dash-desc">Detectar y acompañar el talento local desde el criterio del entrenador.</span></span>
+        <span class="dash-toggle">Explorar</span>
+      </summary>
+      <div class="dash-sub">
+        <div class="dash-sub-row">
+          <button class="dsub" data-target="captacion">Introducción al área de captación</button>
+          <button class="dsub" data-target="captacion">Rol del entrenador como observador</button>
+          <button class="dsub" data-target="captacion">Perfil de jugador que buscamos</button>
+          <button class="dsub" data-target="captacion">Ficha de observación</button>
+          <button class="dsub" data-target="comunicacion">Comunicación con dirección deportiva</button>
+        </div>
+      </div>
+    </details>
+
+    <details class="dash-card">
+      <summary>
+        <span class="dash-num">02</span><span class="dash-ico">🏆</span>
+        <span class="dash-title-wrap"><span class="dash-title">Competición</span><span class="dash-desc">Competir para crecer, con retos reales y alcanzables.</span></span>
+        <span class="dash-toggle">Explorar</span>
+      </summary>
+      <div class="dash-sub">
+        <div class="dash-sub-row">
+          <button class="dsub" data-target="competicion">Filosofía competitiva</button>
+          <button class="dsub" data-target="competicion">Retos reales y alcanzables</button>
+          <button class="dsub" data-target="competicion">Gestión del resultado</button>
+          <button class="dsub" data-target="modelo-juego">Ir a Modelo de Juego</button>
+          <button class="dsub" data-target="analisis">Ir a Análisis</button>
+        </div>
+      </div>
+    </details>
+
+    <details class="dash-card wide">
+      <summary>
+        <span class="dash-num">03</span><span class="dash-ico">📘</span>
+        <span class="dash-title-wrap"><span class="dash-title">Metodología</span><span class="dash-desc">Una misma forma de formar. El área más consultada durante la temporada.</span></span>
+        <span class="dash-toggle">Explorar</span>
+      </summary>
+      <div class="dash-sub">
+        <div class="dash-sub-row">
+          <button class="dsub" data-target="modelo-juego">Modelo de juego</button>
+          <button class="dsub" data-target="tecnicos-formadores">Técnicos formadores</button>
+          <button class="dsub" data-target="control-metodo">Control del método de entrenamiento</button>
+          <button class="dsub" data-target="analisis">Análisis y evaluación del rendimiento</button>
+          <button class="dsub" data-target="denominacion-origen">Denominación de Origen UD Lanzarote</button>
+        </div>
+        <div class="dash-l2">
+          <div class="dash-l2-label">Segunda capa · Dentro de Control del método</div>
+          <div class="dash-sub-row">
+            <button class="dsub" data-target="mit-in">MIT IN</button>
+            <button class="dsub" data-target="mit-out">MIT OUT</button>
+            <button class="dsub" data-target="mit-pro">MIT PRO</button>
+            <button class="dsub" data-target="gamificacion">Gamificación</button>
+            <button class="dsub" data-target="tiempo-espacio">Control del tiempo y espacio</button>
+            <span class="dash-plain">Ejemplo semanal · Rueda de rendimiento · Metodología del portero · Observación en campo · Apoyo metodológico</span>
+          </div>
+        </div>
+      </div>
+    </details>
+
+    <details class="dash-card">
+      <summary>
+        <span class="dash-num">04</span><span class="dash-ico">🚀</span>
+        <span class="dash-title-wrap"><span class="dash-title">Promoción</span><span class="dash-desc">Puente de desarrollo hacia el siguiente nivel.</span></span>
+        <span class="dash-toggle">Explorar</span>
+      </summary>
+      <div class="dash-sub">
+        <div class="dash-sub-row">
+          <button class="dsub" data-target="promocion">Entrenamientos con categorías superiores</button>
+          <button class="dsub" data-target="promocion">Dinámicas con primer equipo</button>
+          <button class="dsub" data-target="promocion">Seguimiento y mentoría</button>
+          <button class="dsub" data-target="denominacion-origen">Ir a Programa DO</button>
+          <button class="dsub" data-target="comunicacion">Ir a Comunicación</button>
+        </div>
+      </div>
+    </details>
+  </div>
+
+  <div class="quick-strip rv d4">
+    <div class="quick-strip-label">Accesos rápidos del entrenador</div>
+    <div class="quick-strip-row">
+      <button class="qstrip-btn" data-target="modelo-juego">Modelo de juego</button>
+      <button class="qstrip-btn" data-target="control-metodo">Control del método</button>
+      <button class="qstrip-btn" data-target="mit-in">MIT IN</button>
+      <button class="qstrip-btn" data-target="mit-out">MIT OUT</button>
+      <button class="qstrip-btn" data-target="mit-pro">MIT PRO</button>
+      <button class="qstrip-btn" data-target="gamificacion">Gamificación</button>
+      <button class="qstrip-btn" data-target="analisis">Análisis</button>
+      <button class="qstrip-btn" data-target="normas-operativas">Normas operativas</button>
+      <button class="qstrip-btn" data-target="comunicacion">Comunicación</button>
+      <button class="qstrip-btn" data-target="centro-contenido">Centro de contenido</button>
+      <button class="qstrip-btn" data-target="contacto">Contacto directo</button>
+    </div>
+  </div>
+  <div class="slide-brand on-dark">
+    <img class="sb-crest" src="assets/logos/crest-official.png" alt="UD Lanzarote">
+    <div class="sb-sep"></div>
+    <img class="sb-wm" src="assets/logos/ud_lanzarote_base_logo.png" alt="">
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════════════════
+     3 · POR QUÉ ESTAMOS AQUÍ — #por-que-estamos-aqui
+════════════════════════════════════════════════════ -->
+<section class="slide" id="por-que-estamos-aqui" style="background:var(--sand); flex-direction:column;">
+  <div style="width:100%;max-width:1100px;">
+    <span class="eyebrow muted-dark rv">Fundamentos del proyecto</span>
+    <h2 class="headline black rv d1">Por qué <em>estamos aquí</em></h2>
+    <div class="rule rv d1"></div>
+    <p class="body-text dark rv d2" style="max-width:680px;">Venimos a ordenar, unificar y construir una forma común de trabajar. No se trata de cambiar todo de golpe. Se trata de crear hábitos claros, sostenibles y compartidos.</p>
+    <div class="pmv-grid rv d3">
+      <div class="pmv-card"><p>La cantera necesita identidad.</p></div>
+      <div class="pmv-card" style="border-top-color:var(--blue)"><p>La metodología necesita coherencia.</p></div>
+      <div class="pmv-card" style="border-top-color:var(--gold)"><p>Los entrenadores necesitan apoyo y claridad.</p></div>
+      <div class="pmv-card"><p>Los jugadores necesitan un entorno estable.</p></div>
+      <div class="pmv-card" style="border-top-color:var(--blue)"><p>Las familias necesitan sentir que hay orden.</p></div>
+      <div class="pmv-card" style="border-top-color:var(--gold)"><p>El club necesita que todos caminemos en la misma dirección.</p></div>
+    </div>
+    <div class="pmv-quote rv d4">"No estamos construyendo solo equipos. Estamos reconstruyendo una cultura de club."</div>
+  </div>
+  <div class="slide-brand on-light">
+    <img class="sb-crest" src="assets/logos/crest-official.png" alt="UD Lanzarote">
+    <div class="sb-sep dark"></div>
+    <img class="sb-wm" src="assets/logos/ud_lanzarote_base_logo.png" alt="">
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════════════════
+     4 · EL ENTRENADOR COMO PIEZA CLAVE — #rol-entrenador
+════════════════════════════════════════════════════ -->
+<section class="slide" id="rol-entrenador" style="background:var(--blue-d); flex-direction:column;">
+  <div class="wm-crest"><img src="assets/logos/crest-official.png" alt=""></div>
+  <span class="eyebrow gold rv">Nexo del proyecto</span>
+  <h2 class="headline white rv d1">El entrenador como <em>pieza clave</em></h2>
+  <div class="rule rv d1"></div>
+  <p class="body-text light rv d2" style="max-width:680px;">El proyecto no ocurre en un documento. Ocurre en el campo, a través del entrenador. Cada sesión, cada corrección, cada mensaje y cada decisión transmiten cultura.</p>
+
+  <div class="hub-wrap rv d3">
+    <div class="hub-line" style="height:38%; transform:translate(-50%,-100%) rotate(0deg);"></div>
+    <div class="hub-line" style="height:38%; transform:translate(-50%,-100%) rotate(60deg);"></div>
+    <div class="hub-line" style="height:38%; transform:translate(-50%,-100%) rotate(120deg);"></div>
+    <div class="hub-line" style="height:38%; transform:translate(-50%,-100%) rotate(180deg);"></div>
+    <div class="hub-line" style="height:38%; transform:translate(-50%,-100%) rotate(240deg);"></div>
+    <div class="hub-line" style="height:38%; transform:translate(-50%,-100%) rotate(300deg);"></div>
+    <div class="hub-node n1"><span>🛡️</span>Club</div>
+    <div class="hub-node n2"><span>⚽</span>Jugador</div>
+    <div class="hub-node n3"><span>👪</span>Familia</div>
+    <div class="hub-node n4"><span>📘</span>Metodología</div>
+    <div class="hub-node n5"><span>🌟</span>Valores</div>
+    <div class="hub-node n6"><span>🏆</span>Competición</div>
+    <div class="hub-center">Entrenador</div>
+  </div>
+  <p class="tagline rv d4" style="color:var(--gold); text-align:center; width:100%; max-width:640px; margin:24px auto 0;">"El entrenador no solo dirige ejercicios. Dirige cultura."</p>
+  <div class="sec-actions rv d5" style="justify-content:center; width:100%;">
+    <button class="sbtn ghost-dark" data-target="metodologia">Ir a Metodología</button>
+    <button class="sbtn ghost-dark" data-target="normas-operativas">Ir a Normas operativas</button>
+    <button class="sbtn gold" data-target="comunicacion">Enviar sugerencia</button>
+    <a class="sbtn wa" href="https://wa.me/34672802334?text=Hola%20Dani%2C%20soy%20entrenador%20de%20UD%20Lanzarote%20Base%20y%20tengo%20una%20duda%20sobre%20el%20proyecto." target="_blank" rel="noopener noreferrer">Contactar</a>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════════════════
+     5 · NO SON "MIS EQUIPOS" — #equipos-club
+════════════════════════════════════════════════════ -->
+<section class="slide" id="equipos-club" style="background:var(--white); flex-direction:column;">
+  <div style="width:100%;max-width:1000px;">
+    <span class="eyebrow muted-dark rv">Identidad de cantera</span>
+    <h2 class="headline black rv d1">No son <em>"mis equipos"</em>, son equipos del club</h2>
+    <div class="rule red rv d1"></div>
+    <p class="body-text dark rv d2" style="max-width:680px;">Cada categoría pertenece a una estructura común. El entrenador lidera su grupo, pero representa una idea colectiva.</p>
+
+    <div class="org-tree rv d3">
+      <div class="org-box" style="background:var(--red);">UD Lanzarote base.<span style="display:block;font-weight:400;font-size:10px;opacity:.75;margin-top:3px;">Un mismo proyecto formativo</span></div>
+      <div class="org-connector"></div>
+      <div class="org-bottom">
+        <div class="org-dept">Benjamín</div>
+        <div class="org-dept red">Alevín</div>
+        <div class="org-dept">Infantil</div>
+        <div class="org-dept red">Cadete</div>
+        <div class="org-dept">Juvenil</div>
+      </div>
+    </div>
+
+    <div class="cards col3 rv d4" style="margin-top:32px;">
+      <div class="card light"><div class="card-body dark">No entrenamos equipos aislados. Construimos una cantera.</div></div>
+      <div class="card light"><div class="card-body dark">El jugador debe sentir continuidad entre categorías.</div></div>
+      <div class="card light"><div class="card-body dark">Todos los entrenadores hablan un mismo idioma metodológico.</div></div>
+      <div class="card light"><div class="card-body dark">La metodología pertenece al club.</div></div>
+      <div class="card light"><div class="card-body dark">Los valores pertenecen al club.</div></div>
+      <div class="card light"><div class="card-body dark">El equipo no es un proyecto personal, es parte de una estructura.</div></div>
+    </div>
+    <div class="pmv-quote rv d5" style="background:var(--blue-d); margin-top:28px;">"No entrenamos equipos aislados. Construimos una cantera."</div>
+  </div>
+  <div class="slide-brand on-light">
+    <img class="sb-crest" src="assets/logos/crest-official.png" alt="UD Lanzarote">
+    <div class="sb-sep dark"></div>
+    <img class="sb-wm" src="assets/logos/ud_lanzarote_base_logo.png" alt="">
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════════════════
+     6 · LOS 4 PILARES DE LA CANTERA — #pilares
+════════════════════════════════════════════════════ -->
+<section class="slide" id="pilares" style="background:var(--blue-d);">
+  <div class="wm-crest"><img src="assets/logos/crest-official.png" alt=""></div>
+  <div class="pillars-wrap">
+    <div>
+      <span class="eyebrow gold rv">Modelo formativo</span>
+      <h2 class="headline white rv d1">Los pilares de <em>la cantera</em></h2>
+      <div class="rule rv d1"></div>
+      <p class="body-text light rv d2">Los cimientos que sostienen nuestro modelo formativo. Descuidar uno debilita todo el proyecto.</p>
+      <div class="pillars-list">
+        <div class="pillar-row rv d2" data-target="captacion"><span class="pillar-row-n">01</span><span class="pillar-row-label">Captación</span></div>
+        <div class="pillar-row gold rv d3" data-target="metodologia"><span class="pillar-row-n">02</span><span class="pillar-row-label">Metodología</span></div>
+        <div class="pillar-row rv d4" data-target="competicion"><span class="pillar-row-n">03</span><span class="pillar-row-label">Competición</span></div>
+        <div class="pillar-row gold rv d5" data-target="promocion"><span class="pillar-row-n">04</span><span class="pillar-row-label">Promoción</span></div>
+      </div>
+    </div>
+    <div class="pillars-img rv d3">
+      <img src="assets/images/four_columns_cantera.png" alt="Los cuatro pilares de la cantera">
+    </div>
+  </div>
+  <div class="slide-brand on-dark">
+    <img class="sb-crest" src="assets/logos/crest-official.png" alt="UD Lanzarote">
+    <div class="sb-sep"></div>
+    <img class="sb-wm" src="assets/logos/ud_lanzarote_base_logo.png" alt="">
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════════════════
+     7 · CAPTACIÓN — #captacion
+════════════════════════════════════════════════════ -->
+<section class="slide" id="captacion" style="background:var(--black); flex-direction:column; align-items:stretch; padding:0;">
+  <div class="pilar-split i-right">
+    <div class="pilar-content">
+      <div class="pilar-badge rv"><img src="assets/logos/crest-official.png" alt="UD Lanzarote"><span>Pilar 01</span></div>
+      <span class="eyebrow rv d1">Primer pilar</span>
+      <h2 class="headline white rv d2">Captación</h2>
+      <div class="rule rv d2"></div>
+      <p class="tagline rv d3" style="color:var(--gold);margin-bottom:16px">El entrenador también observa.</p>
+      <p class="body-text light rv d3">La captación no es solo traer jugadores. Es reconocer talento, entender perfiles, detectar necesidades y ayudar a construir el futuro del club. El entrenador no tiene la última palabra, pero su criterio es fundamental porque conoce el nivel del equipo, las necesidades reales y el contexto competitivo.</p>
+      <div class="pilar-quote rv d4">Captar no es solo traer jugadores. Es reconocer talento, cuidarlo y hacerlo crecer dentro de una identidad común.</div>
+    </div>
+    <div class="pilar-side-img right-fade"><img src="assets/images/pillar_captacion_ciudad_deportiva.png" alt="Captación"></div>
+  </div>
+  <div class="slide" style="min-height:auto; padding:64px; background:var(--sand); flex-direction:column;">
+    <div style="width:100%;max-width:1100px;">
+      <span class="eyebrow muted-dark rv">Puntos clave</span>
+      <h3 class="headline black rv d1" style="font-size:clamp(22px,2.6vw,32px);">Cómo captamos</h3>
+      <div class="rule rv d1"></div>
+      <div class="sistema-grid rv d2">
+        <div class="sist-card"><div class="sist-card-ico">🗓️</div><div class="sist-card-body"><h4>Observación semanal</h4><p>Seguimiento continuo de partidos, torneos y entrenamientos en toda Lanzarote.</p></div></div>
+        <div class="sist-card"><div class="sist-card-ico">🤝</div><div class="sist-card-body"><h4>Criterio compartido</h4><p>Evaluamos con una ficha de observación unificada para todas las categorías.</p></div></div>
+        <div class="sist-card"><div class="sist-card-ico">🧭</div><div class="sist-card-body"><h4>Comunicación con dirección deportiva</h4><p>El criterio del entrenador se traslada de forma directa y ordenada.</p></div></div>
+        <div class="sist-card"><div class="sist-card-ico">⚽</div><div class="sist-card-body"><h4>Perfil alineado al modelo de juego</h4><p>Captación desde la cercanía y la identidad, no solo desde el rendimiento puntual.</p></div></div>
+      </div>
+      <div class="sec-actions rv d3">
+        <button class="sbtn primary" data-target="modelo-juego">Ir a Modelo de Juego</button>
+        <button class="sbtn ghost-light" data-target="tecnicos-formadores">Ir a Técnicos Formadores</button>
+        <button class="sbtn gold" data-target="comunicacion">Enviar sugerencia</button>
+        <button class="sbtn ghost-light" data-target="contacto">Contactar</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════════════════
+     8 · COMPETICIÓN — #competicion
+════════════════════════════════════════════════════ -->
+<section class="slide" id="competicion" style="background:var(--blue-d); flex-direction:column; align-items:stretch; padding:0;">
+  <div class="pilar-split i-left">
+    <div class="pilar-side-img left-fade"><img src="assets/images/pillar_competicion_ciudad_deportiva.png" alt="Competición"></div>
+    <div class="pilar-content">
+      <div class="pilar-badge rv"><img src="assets/logos/crest-official.png" alt="UD Lanzarote"><span>Pilar 02</span></div>
+      <span class="eyebrow rv d1">Segundo pilar</span>
+      <h2 class="headline white rv d2">Competición</h2>
+      <div class="rule rv d2"></div>
+      <p class="tagline rv d3" style="color:var(--gold);margin-bottom:16px">Competir para crecer.</p>
+      <p class="body-text light rv d3">La competición es una herramienta formativa, no un fin en sí mismo. Buscamos que cada partido ayude al jugador a enfrentarse a retos reales, gestionar la dificultad, aprender del error y sostener la exigencia.</p>
+      <div class="pilar-quote rv d4">La competición no es el destino. Es una herramienta para formar mejor.</div>
+    </div>
+  </div>
+  <div class="slide" style="min-height:auto; padding:64px; background:var(--black); flex-direction:column;">
+    <div style="width:100%;max-width:1100px;">
+      <span class="eyebrow rv">Filosofía competitiva</span>
+      <div class="rule rv d1"></div>
+      <div class="filo-grid rv d2">
+        <div class="filo-card"><div class="filo-ico">🎯</div><div class="filo-body"><h4>Retos reales y alcanzables</h4><p>La dificultad bien gestionada acelera el aprendizaje.</p></div></div>
+        <div class="filo-card"><div class="filo-ico">📊</div><div class="filo-body"><h4>El resultado se analiza dentro del proceso</h4><p>Ganar tiene valor, pero no es el único objetivo.</p></div></div>
+        <div class="filo-card"><div class="filo-ico">🧩</div><div class="filo-body"><h4>El partido, extensión del entrenamiento</h4><p>El entrenador ayuda al jugador a interpretar la competición.</p></div></div>
+        <div class="filo-card"><div class="filo-ico">🔍</div><div class="filo-body"><h4>Guía para seguir entrenando</h4><p>La competición nos muestra qué debemos seguir trabajando.</p></div></div>
+      </div>
+      <div class="sec-actions rv d3">
+        <button class="sbtn primary" data-target="modelo-juego">Ir a Modelo de Juego</button>
+        <button class="sbtn ghost-dark" data-target="analisis">Ir a Análisis</button>
+        <button class="sbtn gold" data-target="comunicacion">Ir a Comunicación</button>
+        <button class="sbtn ghost-dark" data-target="contenido">Volver al contenido</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════════════════
+     9 · PROMOCIÓN — #promocion
+════════════════════════════════════════════════════ -->
+<section class="slide" id="promocion" style="background:var(--black); flex-direction:column; align-items:stretch; padding:0;">
+  <div class="pilar-split i-right">
+    <div class="pilar-content">
+      <div class="pilar-badge rv"><img src="assets/logos/crest-official.png" alt="UD Lanzarote"><span>Pilar 03</span></div>
+      <span class="eyebrow rv d1">Tercer pilar</span>
+      <h2 class="headline white rv d2">Promoción</h2>
+      <div class="rule rv d2"></div>
+      <p class="tagline rv d3" style="color:var(--gold);margin-bottom:16px">Crear caminos reales de crecimiento.</p>
+      <p class="body-text light rv d3">La promoción conecta la formación con el siguiente nivel. No se trata solo de subir jugadores por rendimiento puntual, sino de acompañar procesos, detectar madurez, generar oportunidades y preparar al jugador para nuevos contextos de exigencia.</p>
+      <div class="pilar-quote rv d4">Promover no es regalar oportunidades. Es preparar al jugador para sostenerlas.</div>
+    </div>
+    <div class="pilar-side-img left-fade-b"><img src="assets/images/pillar_promocion_ciudad_deportiva.png" alt="Promoción"></div>
+  </div>
+  <div class="slide" style="min-height:auto; padding:64px; background:var(--sand); flex-direction:column;">
+    <div style="width:100%;max-width:1100px;">
+      <span class="eyebrow muted-dark rv">Cómo promovemos</span>
+      <div class="rule red rv d1"></div>
+      <div class="promo-grid rv d2">
+        <div class="promo-item"><div class="promo-ico">⬆️</div><div><h4>Entrenamientos con categorías superiores</h4><p>Integración puntual en grupos de mayor nivel.</p></div></div>
+        <div class="promo-item"><div class="promo-ico">🔝</div><div><h4>Dinámicas con el primer equipo</h4><p>Coordinación entre entrenadores y comunicación con dirección deportiva.</p></div></div>
+        <div class="promo-item"><div class="promo-ico">🧭</div><div><h4>Seguimiento y mentoría</h4><p>Acompañamiento continuo del proceso del jugador.</p></div></div>
+        <div class="promo-item"><div class="promo-ico">📋</div><div><h4>Criterios claros para promocionar</h4><p>La promoción es un proceso, no un premio aislado.</p></div></div>
+        <div class="promo-item"><div class="promo-ico">🌐</div><div><h4>Experiencias fuera de la isla</h4><p>Cuando el contexto lo permite, para equipos con buena evolución.</p></div></div>
+        <div class="promo-item"><div class="promo-ico">🛡️</div><div><h4>Preparar al jugador para sostener la oportunidad</h4><p>No basta con darla: hay que acompañarla.</p></div></div>
+      </div>
+      <div class="sec-actions rv d3">
+        <button class="sbtn primary" data-target="metodologia">Ir a Metodología</button>
+        <button class="sbtn ghost-light" data-target="analisis">Ir a Análisis</button>
+        <button class="sbtn ghost-light" data-target="denominacion-origen">Ir a Denominación de Origen</button>
+        <button class="sbtn gold" data-target="comunicacion">Ir a Comunicación</button>
+        <button class="sbtn ghost-light" data-target="contenido">Volver al contenido</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════════════════
+     10 · METODOLOGÍA (ÓRBITA) — #metodologia
+════════════════════════════════════════════════════ -->
+<section class="slide" id="metodologia" style="padding:0;background:#00203F;">
+  <div id="orbit-outer" style="position:relative;width:100%;height:100vh;overflow:hidden;background:radial-gradient(120% 120% at 62% 42%, #0A4E96 0%, #003B7A 38%, #002C5C 68%, #00203F 100%);">
+    <svg viewBox="0 0 1920 1080" preserveAspectRatio="xMidYMid slice" style="position:absolute;inset:0;width:100%;height:100%;z-index:1;opacity:.16;pointer-events:none">
+      <g fill="none" stroke="#9EC2E8" stroke-width="1.4">
+        <ellipse cx="1010" cy="560" rx="320" ry="220"/><ellipse cx="1010" cy="560" rx="470" ry="320"/>
+        <ellipse cx="1010" cy="560" rx="640" ry="430"/><ellipse cx="1010" cy="560" rx="820" ry="560"/>
+        <ellipse cx="1010" cy="560" rx="1010" ry="700"/>
+      </g>
+    </svg>
+    <div id="orbit-stage" style="position:absolute;width:1920px;height:1080px;top:50%;left:50%;transform:translate(-50%,-50%) scale(var(--os,1));transform-origin:center;">
+      <svg viewBox="0 0 1920 1080" style="position:absolute;inset:0;width:100%;height:100%;z-index:2;pointer-events:none;overflow:visible">
+        <ellipse cx="1010" cy="580" rx="540" ry="345" fill="none" stroke="rgba(196,214,234,.30)" stroke-width="1.5" stroke-dasharray="2 12"/>
+        <ellipse cx="1010" cy="580" rx="540" ry="345" fill="none" stroke="rgba(222,192,103,.18)" stroke-width="6" style="filter:blur(3px)"/>
+      </svg>
+      <svg id="orbit-conn-svg" viewBox="0 0 1920 1080" style="position:absolute;inset:0;width:100%;height:100%;z-index:112;pointer-events:none;overflow:visible">
+        <defs><style>@keyframes udl-dash{to{stroke-dashoffset:-240}}</style></defs>
+        <line id="orbit-conn-line" x1="1010" y1="580" x2="1010" y2="580" stroke="#DEC067" stroke-width="3" stroke-linecap="round" stroke-dasharray="3 11" opacity="0" style="animation:udl-dash 3s linear infinite"/>
+        <circle id="orbit-conn-dot" cx="1010" cy="580" r="6" fill="#DEC067" opacity="0"/>
+      </svg>
+      <div style="position:absolute;left:1010px;top:580px;width:580px;height:580px;transform:translate(-50%,-50%);border-radius:50%;background:radial-gradient(circle,rgba(222,192,103,.28) 0%,rgba(201,162,39,.10) 38%,transparent 66%);z-index:105;pointer-events:none"></div>
+      <div style="position:absolute;left:1010px;top:580px;width:300px;height:300px;transform:translate(-50%,-50%);z-index:110;pointer-events:none">
+        <img src="assets/logos/crest-official.png" alt="UD Lanzarote" style="width:100%;height:100%;object-fit:contain;filter:drop-shadow(0 18px 34px rgba(0,0,0,.55)) drop-shadow(0 0 22px rgba(222,192,103,.35))"/>
+      </div>
+      <div id="orbit-nodes" style="position:absolute;inset:0;z-index:200"></div>
+      <div id="orbit-tip" style="position:absolute;width:310px;pointer-events:none;z-index:330;transition:opacity .25s, transform .25s;opacity:0;transform:scale(.9)">
+        <div id="orbit-tip-inner" style="background:#F7F5F0;border-radius:14px;padding:22px 24px 24px;box-shadow:0 26px 60px rgba(0,0,0,.45);border-top:5px solid #DEC067;">
+          <div id="orbit-tip-num" style="font-family:'Montserrat',sans-serif;font-weight:800;font-size:11px;letter-spacing:.18em;color:#C9A227;text-transform:uppercase;"></div>
+          <div id="orbit-tip-label" style="font-family:'Montserrat',sans-serif;font-weight:800;font-size:20px;line-height:1.15;color:#003B7A;margin-top:7px;text-transform:uppercase;"></div>
+          <div id="orbit-tip-desc" style="font-family:'Inter',sans-serif;font-size:15px;line-height:1.5;color:#34383E;margin-top:10px;"></div>
+        </div>
+      </div>
+      <div style="position:absolute;left:74px;top:90px;z-index:20;max-width:440px;pointer-events:none">
+        <div style="font-family:'Montserrat',sans-serif;font-weight:700;font-size:16px;letter-spacing:.26em;color:#DEC067;text-transform:uppercase;">Pilar 02 · Metodología</div>
+        <div style="font-family:'Montserrat',sans-serif;font-weight:900;font-size:64px;line-height:.98;letter-spacing:-.02em;color:#fff;text-transform:uppercase;margin-top:14px;">Líneas de<br><em style="color:#D71920;font-style:normal;">trabajo</em></div>
+        <div style="width:96px;height:5px;background:#C9A227;border-radius:3px;margin-top:20px;"></div>
+        <div style="font-family:'Inter',sans-serif;font-size:16px;line-height:1.55;color:#C4D6EA;margin-top:20px;">Las cinco líneas que articulan la formación de nuestra cantera. Una misma forma de entrenar, corregir, competir, evaluar y acompañar al jugador.</div>
+        <div class="sec-actions" style="margin-top:26px;pointer-events:auto;">
+          <button class="sbtn ghost-dark" data-target="contenido">Volver al contenido</button>
+        </div>
+      </div>
+      <div style="position:absolute;left:74px;bottom:58px;z-index:20;pointer-events:none">
+        <img src="assets/logos/ud_lanzarote_base_logo.png" alt="UD Lanzarote Base" style="height:40px;filter:brightness(0) invert(1);opacity:.9;">
+        <div style="font-family:'Montserrat',sans-serif;font-weight:700;font-size:14px;letter-spacing:.14em;color:#DEC067;text-transform:uppercase;margin-top:12px;">La grandeza se forma en la base</div>
+      </div>
+      <canvas id="orbit-particles" style="position:absolute;inset:0;width:1920px;height:1080px;z-index:3;pointer-events:none"></canvas>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════════════════
+     11 · MODELO DE JUEGO — #modelo-juego
+════════════════════════════════════════════════════ -->
+<section class="slide" id="modelo-juego" style="background:var(--black); flex-direction:column;">
+  <div style="width:100%;max-width:1180px;">
+    <span class="eyebrow rv">Línea 01 · Metodología</span>
+    <h2 class="headline white rv d1">Modelo <em>de juego</em></h2>
+    <div class="rule rv d1"></div>
+    <p class="body-text light rv d2" style="max-width:680px;">Una identidad de juego común para todas las categorías. No es una teoría: es lo que se ve en el campo cada fin de semana.</p>
+    <div class="mj-moments rv d3">
+      <div class="mj-moment"><div class="mj-moment-tag">Fase 01</div><h4>Ataque posicional</h4></div>
+      <div class="mj-moment"><div class="mj-moment-tag">Fase 02</div><h4>Transición ofensiva</h4></div>
+      <div class="mj-moment gold"><div class="mj-moment-tag">Fase 03</div><h4>Defensa posicional</h4></div>
+      <div class="mj-moment gold"><div class="mj-moment-tag">Fase 04</div><h4>Transición defensiva</h4></div>
+    </div>
+    <p class="card-body rv d4" style="margin-top:16px; max-width:680px;">Cada fase incluye principios ofensivos y defensivos, comportamientos por categoría, ejemplos de tareas e indicadores por posición — desarrollados en el módulo interactivo:</p>
+    <div class="mj-frame rv d4">
+      <iframe src="modules/modelo_juego.html" allowfullscreen title="Modelo de juego — módulo interactivo"></iframe>
+    </div>
+    <div class="sec-actions rv d5">
+      <button class="sbtn primary" data-target="control-metodo">Ir a Control del método</button>
+      <button class="sbtn ghost-dark" data-target="analisis">Ir a Análisis</button>
+      <button class="sbtn gold" data-target="comunicacion">Enviar mejora sobre modelo de juego</button>
+      <button class="sbtn ghost-dark" data-target="contenido">Volver al contenido</button>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════════════════
+     12 · TÉCNICOS FORMADORES — #tecnicos-formadores
+════════════════════════════════════════════════════ -->
+<section class="slide" id="tecnicos-formadores" style="background:var(--sand); flex-direction:column; align-items:stretch; padding:0;">
+  <div class="tec-split">
+    <div class="tec-img"><img src="assets/images/tecnicos_formadores_artesano.png" alt="Técnicos formadores"></div>
+    <div class="tec-content">
+      <span class="eyebrow muted-dark rv">Línea 02 · Metodología</span>
+      <h2 class="headline black rv d1">Técnicos <em>formadores</em></h2>
+      <div class="rule rv d1"></div>
+      <p class="body-text dark rv d2">El entrenador educa incluso cuando no está explicando. Por muy desarrollada que esté la metodología, el verdadero nexo de unión entre el club y los jugadores es el entrenador.</p>
+      <div class="tec-items">
+        <div class="tec-item rv d3"><div class="tec-item-ico">👤</div><div><h4>Formador y responsable</h4><p>Alineado con el club, comunicador y exigente desde el respeto.</p></div></div>
+        <div class="tec-item rv d3"><div class="tec-item-ico">📖</div><div><h4>Abierto a formarse y a ser evaluado</h4><p>Dispuesto a cuidar el mensaje y a trabajar en equipo.</p></div></div>
+        <div class="tec-item rv d4"><div class="tec-item-ico">🏝️</div><div><h4>Representa al club</h4><p>Dentro y fuera del campo, en cada gesto y decisión.</p></div></div>
+      </div>
+      <p class="tagline rv d4" style="color:var(--red); margin-top:18px;">"Lo que repite el entrenador se convierte en cultura."</p>
+      <div class="sec-actions rv d5">
+        <button class="sbtn primary" data-target="control-metodo">Ir a Control del método</button>
+        <button class="sbtn ghost-light" data-target="normas-operativas">Ir a Normas operativas</button>
+        <button class="sbtn ghost-light" data-target="contenido">Volver al contenido</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════════════════
+     13 · CONTROL DEL MÉTODO — #control-metodo
+════════════════════════════════════════════════════ -->
+<section class="slide" id="control-metodo" style="background:var(--blue-d); flex-direction:column;">
+  <div class="wm-crest"><img src="assets/logos/crest-official.png" alt=""></div>
+  <span class="eyebrow rv">Línea 03 · Metodología</span>
+  <h2 class="headline white rv d1">Control del método <em>de entrenamiento</em></h2>
+  <div class="rule rv d1"></div>
+  <p class="ctrl-intro rv d2">No se trata solo de entrenar más. Se trata de entrenar mejor, con propósito y dirección: qué entrenar, cómo entrenar, cuándo entrenar y por qué entrenarlo, respetando las etapas formativas de cada edad.</p>
+  <div class="ctrl-grid rv d3">
+    <div class="ctrl-block" data-target="mit-in"><div class="ctrl-block-ico">🏋️</div><div class="ctrl-block-label">MIT IN</div><div class="ctrl-block-sub">Dentro de la sesión</div></div>
+    <div class="ctrl-block" data-target="mit-out"><div class="ctrl-block-ico">🔁</div><div class="ctrl-block-label">MIT OUT</div><div class="ctrl-block-sub">Fuera del entrenamiento</div></div>
+    <div class="ctrl-block highlight" data-target="mit-pro"><div class="ctrl-block-ico">⭐</div><div class="ctrl-block-label">MIT PRO</div><div class="ctrl-block-sub">Referentes de alto nivel</div></div>
+    <div class="ctrl-block" data-target="gamificacion"><div class="ctrl-block-ico">🎮</div><div class="ctrl-block-label">Gamificación</div><div class="ctrl-block-sub">Aprender jugando</div></div>
+    <div class="ctrl-block" data-target="tiempo-espacio"><div class="ctrl-block-ico">⏱️</div><div class="ctrl-block-label">Tiempo y espacio</div><div class="ctrl-block-sub">Optimización del campo</div></div>
+  </div>
+  <div class="ctrl-extra rv d4">
+    <div>
+      <h4>También forma parte del control del método</h4>
+      <ul>
+        <li>Formación interna y asesoramiento al entrenador</li>
+        <li>Observación en campo por parte de dirección deportiva</li>
+        <li>Metodología específica del portero</li>
+      </ul>
+    </div>
+    <div>
+      <h4>Herramientas de seguimiento</h4>
+      <ul>
+        <li>Ejemplo semanal de distribución de la sesión</li>
+        <li>Rueda de rendimiento por jugador</li>
+        <li>Conexión constante con el modelo de juego</li>
+      </ul>
+    </div>
+  </div>
+  <div class="sec-actions rv d5">
+    <button class="sbtn gold" data-target="modelo-juego">Ir a Modelo de Juego</button>
+    <button class="sbtn ghost-dark" data-target="analisis">Ir a Análisis</button>
+    <button class="sbtn ghost-dark" data-target="comunicacion">Enviar mejora metodológica</button>
+  </div>
+  <div class="slide-brand on-dark">
+    <img class="sb-crest" src="assets/logos/crest-official.png" alt="UD Lanzarote">
+    <div class="sb-sep"></div>
+    <img class="sb-wm" src="assets/logos/ud_lanzarote_base_logo.png" alt="">
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════════════════
+     14 · MIT (VISIÓN GENERAL) — #mit
+════════════════════════════════════════════════════ -->
+<section class="slide" id="mit" style="background:var(--black); flex-direction:column;">
+  <div class="wm-crest"><img src="assets/logos/crest-official.png" alt=""></div>
+  <span class="eyebrow rv">Línea 03 · Control del método</span>
+  <h2 class="headline white rv d1">M.I.T — Método Integral <em>de Tecnificación</em></h2>
+  <div class="rule rv d1"></div>
+  <div class="mit-cards rv d2">
+    <div class="mit-card red-top">
+      <div class="mit-badge red">MIT IN</div>
+      <h3>Dentro del entrenamiento</h3>
+      <p>Tiempo de calidad para el desarrollo individual, integrado en el entrenamiento colectivo.</p>
+      <div class="sec-actions" style="margin-top:16px;"><button class="sbtn ghost-dark" data-target="mit-in">Explorar MIT IN</button></div>
+    </div>
+    <div class="mit-card blue-top">
+      <div class="mit-badge blue">MIT OUT</div>
+      <h3>Fuera del entrenamiento</h3>
+      <p>Trabajo complementario e individualizado para acelerar el desarrollo del jugador.</p>
+      <div class="sec-actions" style="margin-top:16px;"><button class="sbtn ghost-dark" data-target="mit-out">Explorar MIT OUT</button></div>
+    </div>
+    <div class="mit-card gold-top">
+      <div class="mit-badge gold">MIT PRO</div>
+      <h3>Referentes de alto nivel</h3>
+      <p>Aprendizaje directo desde el fútbol profesional, con referentes reales.</p>
+      <div class="sec-actions" style="margin-top:16px;"><button class="sbtn ghost-dark" data-target="mit-pro">Explorar MIT PRO</button></div>
+    </div>
+  </div>
+  <div class="mit-footer rv d3">Los tres formatos buscan elevar la técnica, la comprensión del juego, la toma de decisiones y el rendimiento individual del jugador.</div>
+  <div class="sec-actions rv d4">
+    <button class="sbtn ghost-dark" data-target="control-metodo">Volver a Control del método</button>
+    <button class="sbtn ghost-dark" data-target="contenido">Volver al contenido</button>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════════════════
+     15 · MIT IN — #mit-in
+════════════════════════════════════════════════════ -->
+<section class="slide" id="mit-in" style="background:var(--blue-d); flex-direction:column;">
+  <div class="wm-crest"><img src="assets/logos/crest-official.png" alt=""></div>
+  <div class="mit-badge red rv" style="margin-bottom:16px;">MIT IN</div>
+  <h2 class="headline white rv d1">Mejora Integral Técnica <em>dentro del entrenamiento</em></h2>
+  <div class="rule rv d1"></div>
+  <p class="body-text light rv d2" style="max-width:700px;">Dentro del entrenamiento colectivo, creamos tiempo de calidad para el desarrollo individual. MIT IN es el formato interno de tecnificación que se desarrolla dentro del horario habitual del entrenamiento, con espacios específicos para lo técnico, táctico y motor que cada jugador necesita mejorar.</p>
+  <div class="cards col2 rv d3" style="margin-top:20px;">
+    <div class="card dark"><div class="card-body">Espacios de 20 a 45 minutos según categoría y objetivo.</div></div>
+    <div class="card dark"><div class="card-body">Trabajo individual integrado con propósito, sin perder la estructura de equipo.</div></div>
+    <div class="card dark"><div class="card-body">Alta repetición y corrección focalizada.</div></div>
+    <div class="card dark"><div class="card-body">Progresión desde lo analítico a lo contextual.</div></div>
+  </div>
+  <div class="mitd-grid rv d4">
+    <div class="mitd-card"><h5>Aspectos a incidir</h5><ul><li>Repeticiones de calidad</li><li>Corrección inmediata</li><li>Conexión con el modelo de juego</li></ul></div>
+    <div class="mitd-card"><h5>Aspectos a evitar</h5><ul><li>Romper la dinámica del grupo</li><li>Tiempos muertos</li><li>Trabajo sin objetivo claro</li></ul></div>
+    <div class="mitd-card"><h5>Estructura de sesión / tarea tipo</h5><p>Se irá completando durante la temporada con ejemplos semanales y fichas descargables.</p></div>
+  </div>
+  <div class="sec-actions rv d5">
+    <button class="sbtn ghost-dark" data-target="mit">Volver a MIT</button>
+    <button class="sbtn gold" data-target="comunicacion">Enviar sugerencia sobre MIT IN</button>
+    <button class="sbtn ghost-dark" data-target="contenido">Volver al contenido</button>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════════════════
+     16 · MIT OUT — #mit-out
+════════════════════════════════════════════════════ -->
+<section class="slide" id="mit-out" style="background:var(--black); flex-direction:column;">
+  <div class="wm-crest"><img src="assets/logos/crest-official.png" alt=""></div>
+  <div class="mit-badge blue rv" style="margin-bottom:16px;">MIT OUT</div>
+  <h2 class="headline white rv d1">Mejora Integral Técnica <em>fuera del entrenamiento</em></h2>
+  <div class="rule rv d1"></div>
+  <p class="body-text light rv d2" style="max-width:700px;">Trabajo complementario para acelerar el desarrollo individual. MIT OUT complementa el entrenamiento colectivo con espacios externos de mejora individual — un complemento metodológico, nunca un sustituto del trabajo del equipo.</p>
+  <div class="cards col3 rv d3" style="margin-top:20px;">
+    <div class="card dark"><div class="card-body">Técnica específica y desarrollo motor.</div></div>
+    <div class="card dark"><div class="card-body">Coordinación y duelos individuales.</div></div>
+    <div class="card dark"><div class="card-body">Planes por jugador según necesidades y etapa.</div></div>
+  </div>
+  <div class="sec-actions rv d4">
+    <button class="sbtn ghost-dark" data-target="mit">Volver a MIT</button>
+    <button class="sbtn gold" data-target="comunicacion">Enviar sugerencia sobre MIT OUT</button>
+    <button class="sbtn ghost-dark" data-target="contenido">Volver al contenido</button>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════════════════
+     17 · MIT PRO — #mit-pro
+════════════════════════════════════════════════════ -->
+<section class="slide" id="mit-pro" style="background:var(--blue-d); flex-direction:column;">
+  <div class="wm-crest"><img src="assets/logos/crest-official.png" alt=""></div>
+  <div class="mit-badge gold rv" style="margin-bottom:16px;">MIT PRO</div>
+  <h2 class="headline white rv d1">Aprendizaje directo desde <em>el fútbol profesional</em></h2>
+  <div class="rule rv d1"></div>
+  <p class="body-text light rv d2" style="max-width:700px;">El referente no solo inspira. También acelera el aprendizaje. MIT PRO incorpora referentes, jugadores profesionales o experiencias reales del fútbol de alto rendimiento para acercar al jugador joven a modelos concretos.</p>
+  <div class="cards col4 rv d3" style="margin-top:20px;">
+    <div class="card dark"><div class="card-body">Aumentar motivación y conexión emocional con el club.</div></div>
+    <div class="card dark"><div class="card-body">Acercar referentes reales del alto rendimiento.</div></div>
+    <div class="card dark"><div class="card-body">Reforzar conceptos técnico-tácticos.</div></div>
+    <div class="card dark"><div class="card-body">Conectar metodología y alto rendimiento.</div></div>
+  </div>
+  <div class="sec-actions rv d4">
+    <button class="sbtn ghost-dark" data-target="mit">Volver a MIT</button>
+    <button class="sbtn gold" data-target="comunicacion">Enviar sugerencia sobre MIT PRO</button>
+    <button class="sbtn ghost-dark" data-target="contenido">Volver al contenido</button>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════════════════
+     18 · GAMIFICACIÓN — #gamificacion
+════════════════════════════════════════════════════ -->
+<section class="slide" id="gamificacion" style="background:var(--black);">
+  <div class="wm-crest"><img src="assets/logos/crest-official.png" alt=""></div>
+  <div class="gam-split">
+    <div class="gam-img rv d1"><img src="assets/images/gamificacion_camino_rojiazul.png" alt="Gamificación del aprendizaje"></div>
+    <div>
+      <span class="eyebrow rv">Línea 03 · Control del método</span>
+      <h2 class="headline white rv d1">Gamificación</h2>
+      <div class="rule rv d1"></div>
+      <p class="body-text light rv d2">Aprender jugando. Competir aprendiendo. La gamificación transforma objetivos de entrenamiento en retos que generan motivación, repetición, aprendizaje y conexión emocional.</p>
+      <div class="gam-items">
+        <div class="gam-item rv d3"><div class="gam-item-ico">🔥</div><div><h4>Retos semanales</h4><p>Objetivos claros que mantienen el interés activo.</p></div></div>
+        <div class="gam-item rv d3"><div class="gam-item-ico">🔄</div><div><h4>Repeticiones de calidad</h4><p>Uso de la pierna no dominante y hábitos técnicos.</p></div></div>
+        <div class="gam-item rv d4"><div class="gam-item-ico">🧠</div><div><h4>Mejora coordinativa</h4><p>Aprendizaje motor más eficaz en edades tempranas.</p></div></div>
+        <div class="gam-item rv d4"><div class="gam-item-ico">❤️</div><div><h4>Conexión emocional con el club</h4><p>Ejemplo tipo tablero: se irá completando durante la temporada.</p></div></div>
+      </div>
+      <p class="tagline rv d5" style="color:var(--gold); margin-top:16px;">"El jugador aprende más cuando disfruta el proceso."</p>
+      <div class="sec-actions rv d5">
+        <button class="sbtn ghost-dark" data-target="control-metodo">Volver a Control del método</button>
+        <button class="sbtn gold" data-target="comunicacion">Enviar idea de reto o dinámica</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════════════════
+     19 · CONTROL DEL TIEMPO Y ESPACIO — #tiempo-espacio
+════════════════════════════════════════════════════ -->
+<section class="slide" id="tiempo-espacio" style="background:var(--sand); flex-direction:column; align-items:stretch; padding:0;">
+  <div class="ts-split">
+    <div class="ts-content">
+      <span class="eyebrow muted-dark rv">Línea 03 · Control del método</span>
+      <h2 class="headline black rv d1">Control del tiempo <em>y del espacio</em></h2>
+      <div class="rule rv d1"></div>
+      <p class="body-text dark rv d2">La calidad de la sesión empieza antes de que ruede el balón. Entrenar más no siempre significa entrenar mejor.</p>
+      <div class="ts-items">
+        <div class="ts-item rv d3"><div class="ts-dot"></div><div class="ts-text"><h4>Distribución previa del espacio</h4><p>Material y grupos organizados antes de empezar.</p></div></div>
+        <div class="ts-item rv d3"><div class="ts-dot"></div><div class="ts-text"><h4>Reducción de tiempos muertos</h4><p>Transiciones rápidas entre tareas.</p></div></div>
+        <div class="ts-item rv d4"><div class="ts-dot"></div><div class="ts-text"><h4>Puntualidad y aprovechamiento</h4><p>Cada minuto de sesión cuenta.</p></div></div>
+        <div class="ts-item rv d4"><div class="ts-dot"></div><div class="ts-text"><h4>Uso eficiente del campo</h4><p>Cada grupo con su espacio definido y optimizado.</p></div></div>
+      </div>
+      <div class="sec-actions rv d5">
+        <button class="sbtn primary" data-target="control-metodo">Volver a Control del método</button>
+        <button class="sbtn ghost-light" data-target="comunicacion">Enviar mejora organizativa</button>
+      </div>
+    </div>
+    <div class="ts-img"><img src="assets/images/control_tiempo_espacio.png" alt="Control del tiempo y espacio"></div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════════════════
+     20 · ANÁLISIS Y EVALUACIÓN — #analisis
+════════════════════════════════════════════════════ -->
+<section class="slide" id="analisis" style="background:var(--blue-d); flex-direction:column;">
+  <div class="wm-crest"><img src="assets/logos/crest-official.png" alt=""></div>
+  <span class="eyebrow rv">Línea 04 · Metodología</span>
+  <h2 class="headline white rv d1">Análisis y evaluación <em>del rendimiento</em></h2>
+  <div class="rule rv d1"></div>
+  <p class="body-text light rv d2" style="max-width:680px;">Evaluar para mejorar, no para señalar. El vídeo y el análisis son herramientas de aprendizaje: objetivan el proceso, aceleran la comprensión del juego y mejoran la toma de decisiones.</p>
+  <div class="an-grid rv d3">
+    <div class="an-card"><div class="an-card-ico">🎬</div><h4>Uso del vídeo</h4><ul><li>Grabación de partidos</li><li>Feedback individual y colectivo</li><li>Seguimiento longitudinal</li></ul></div>
+    <div class="an-card"><div class="an-card-ico">📊</div><h4>Evaluación del jugador</h4><ul><li>Perfil individual por temporada</li><li>Evaluación del equipo</li></ul></div>
+    <div class="an-card"><div class="an-card-ico">🧠</div><h4>Formación del entrenador</h4><ul><li>Edición y análisis de vídeo</li><li>Observación objetiva y estructurada</li></ul></div>
+    <div class="an-card span2"><div class="an-card-ico">🎯</div><h4>Implementación 2026–2028</h4><ul><li>El análisis acompaña el proceso formativo, no busca castigar ni controlar</li><li>Herramientas de análisis introducidas de forma progresiva</li><li>Los datos aceleran el aprendizaje y guían la mejora</li></ul></div>
+  </div>
+  <div class="sec-actions rv d4">
+    <button class="sbtn gold" data-target="comunicacion">Enviar sugerencia sobre análisis</button>
+    <button class="sbtn ghost-dark" data-target="contenido">Volver al contenido</button>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════════════════
+     21 · DENOMINACIÓN DE ORIGEN — #denominacion-origen
+════════════════════════════════════════════════════ -->
+<section class="slide" id="denominacion-origen" style="background:var(--black); flex-direction:column;">
+  <div style="width:100%;max-width:1140px;">
+    <span class="eyebrow muted rv">Denominación de Origen · Línea 05</span>
+    <h2 class="headline white rv d1">Nuestra identidad, <em>convertida en comportamientos</em></h2>
+    <div class="rule rv d1"></div>
+    <p class="body-text light rv d2" style="max-width:700px;">Esfuerzo, respeto, compromiso, disciplina, compañerismo, alegría, pertenencia y humildad. Así se aterrizan los valores en el día a día:</p>
+    <div class="do-values rv d3">
+      <div class="do-val">Entrenamiento</div><div class="do-val">Partido</div><div class="do-val">Vestuario</div>
+      <div class="do-val">Relación con familias</div><div class="do-val">Victoria</div><div class="do-val">Derrota</div>
+      <div class="do-val">Compañeros</div><div class="do-val">Árbitros</div><div class="do-val">Rivales</div>
+    </div>
+    <div class="do-frame rv d4"><iframe src="modules/valores_lanzarote.html" allowfullscreen title="Denominación de Origen — módulo interactivo"></iframe></div>
+    <p class="tagline rv d5" style="color:var(--gold);">"El fútbol es el vehículo, pero las personas son nuestro destino."</p>
+    <div class="sec-actions rv d5">
+      <button class="sbtn gold" data-target="comunicacion">Compartir gesto o ejemplo DO</button>
+      <button class="sbtn ghost-dark" data-target="contenido">Volver al contenido</button>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════════════════
+     22 · NORMAS OPERATIVAS — #normas-operativas
+════════════════════════════════════════════════════ -->
+<section class="slide" id="normas-operativas" style="background:var(--sand); flex-direction:column;">
+  <div style="width:100%;max-width:1100px;">
+    <span class="eyebrow muted-dark rv">Compromisos del día a día</span>
+    <h2 class="headline black rv d1">Normas <em>operativas del entrenador</em></h2>
+    <div class="rule red rv d1"></div>
+    <p class="body-text dark rv d2" style="max-width:680px;">La coherencia del club se construye en los detalles. Un tono claro, firme y respetuoso, para que todos trabajemos bajo el mismo criterio.</p>
+    <div class="checklist rv d3">
+      <div class="check-item"><span class="check-ico">✓</span><p>Puntualidad en cada sesión y partido.</p></div>
+      <div class="check-item"><span class="check-ico">✓</span><p>Imagen y vestimenta acordes al club.</p></div>
+      <div class="check-item"><span class="check-ico">✓</span><p>Preparación previa de la sesión.</p></div>
+      <div class="check-item"><span class="check-ico">✓</span><p>Uso correcto del material y cuidado de instalaciones.</p></div>
+      <div class="check-item"><span class="check-ico">✓</span><p>Comunicación clara con las familias.</p></div>
+      <div class="check-item"><span class="check-ico">✓</span><p>Comunicación interna con coordinación y reporte semanal.</p></div>
+      <div class="check-item"><span class="check-ico">✓</span><p>Respeto a la metodología y a las decisiones del club.</p></div>
+      <div class="check-item"><span class="check-ico">✓</span><p>Gestión cuidada del grupo de WhatsApp del equipo.</p></div>
+      <div class="check-item"><span class="check-ico">✓</span><p>Cuidado del lenguaje dentro y fuera del campo.</p></div>
+      <div class="check-item"><span class="check-ico">✗</span><p>No improvisar sistemáticamente la planificación.</p></div>
+      <div class="check-item"><span class="check-ico">✗</span><p>No contradecir públicamente al club.</p></div>
+      <div class="check-item"><span class="check-ico">✗</span><p>No usar el equipo como proyecto personal.</p></div>
+    </div>
+    <p class="tagline rv d4" style="color:var(--red); margin-top:20px;">"La coherencia del club se construye en los detalles."</p>
+    <div class="sec-actions rv d5">
+      <button class="sbtn primary" data-target="comunicacion">Consultar duda operativa</button>
+      <button class="sbtn ghost-light" data-target="contacto">Contactar</button>
+      <button class="sbtn ghost-light" data-target="contenido">Volver al contenido</button>
+    </div>
+  </div>
+  <div class="slide-brand on-light">
+    <img class="sb-crest" src="assets/logos/crest-official.png" alt="UD Lanzarote">
+    <div class="sb-sep dark"></div>
+    <img class="sb-wm" src="assets/logos/ud_lanzarote_base_logo.png" alt="">
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════════════════
+     23 · CENTRO DE RECURSOS — #recursos
+════════════════════════════════════════════════════ -->
+<section class="slide" id="recursos" style="background:var(--black); flex-direction:column;">
+  <div class="wm-crest"><img src="assets/logos/crest-official.png" alt=""></div>
+  <span class="eyebrow rv">Biblioteca del entrenador</span>
+  <h2 class="headline white rv d1">Centro de <em>recursos</em></h2>
+  <div class="rule rv d1"></div>
+  <p class="body-text light rv d2" style="max-width:640px;">Este espacio se irá completando durante la temporada.</p>
+  <div class="res-grid rv d3">
+    <a class="res-card" href="#"><span class="res-ico">📝</span><h4>Plantilla de sesión</h4><span>Próximamente</span></a>
+    <a class="res-card" href="#"><span class="res-ico">📊</span><h4>Ficha de evaluación de jugador</h4><span>Próximamente</span></a>
+    <a class="res-card" href="#"><span class="res-ico">🔎</span><h4>Ficha de observación de captación</h4><span>Próximamente</span></a>
+    <a class="res-card" href="#"><span class="res-ico">📄</span><h4>Modelo de informe mensual</h4><span>Próximamente</span></a>
+    <a class="res-card" href="#"><span class="res-ico">💬</span><h4>Normas de comunicación</h4><span>Próximamente</span></a>
+    <a class="res-card" href="#"><span class="res-ico">📅</span><h4>Calendario de formación interna</h4><span>Próximamente</span></a>
+    <a class="res-card" href="#"><span class="res-ico">🗂️</span><h4>Base de tareas</h4><span>Próximamente</span></a>
+    <button class="res-card" data-target="contacto" style="text-align:left; border:1px solid rgba(255,255,255,.08); cursor:pointer;"><span class="res-ico">📞</span><h4>Contacto directo</h4><span>Disponible</span></button>
+    <button class="res-card" data-target="modelo-juego" style="text-align:left; border:1px solid rgba(255,255,255,.08); cursor:pointer;"><span class="res-ico">⚽</span><h4>Modelo de juego</h4><span>Disponible</span></button>
+    <button class="res-card" data-target="denominacion-origen" style="text-align:left; border:1px solid rgba(255,255,255,.08); cursor:pointer;"><span class="res-ico">🌟</span><h4>Programa DO</h4><span>Disponible</span></button>
+  </div>
+  <div class="sec-actions rv d4">
+    <button class="sbtn ghost-dark" data-target="contenido">Volver al contenido</button>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════════════════
+     24 · COMUNICACIÓN CON DIRECCIÓN DEPORTIVA — #comunicacion
+════════════════════════════════════════════════════ -->
+<section class="slide" id="comunicacion" style="background:var(--blue-d); flex-direction:column;">
+  <div class="wm-crest"><img src="assets/logos/crest-official.png" alt=""></div>
+  <span class="eyebrow gold rv">Tu mirada también construye el proyecto</span>
+  <h2 class="headline white rv d1">Hablemos <em>para mejorar</em></h2>
+  <div class="rule rv d1"></div>
+  <p class="body-text light rv d2" style="max-width:680px;">La metodología no se construye solo desde un despacho. Se mejora escuchando lo que ocurre cada día en el campo. Si ves una mejora, una dificultad, una idea o una situación que crees que puede ayudar al club, este espacio es para comunicarlo de forma directa y constructiva.</p>
+  <p class="tagline rv d2" style="color:var(--gold); margin-top:10px;">"No buscamos señalar errores. Buscamos mejorar juntos."</p>
+
+  <!-- TODO: conectar este formulario con el correo real o servicio externo (Formspree, Netlify Forms, Google Forms o Airtable Form) -->
+  <form class="form-card rv d3" id="comm-form">
+    <div class="form-grid">
+      <div class="form-field"><label>Nombre del entrenador</label><input type="text" name="nombre" required></div>
+      <div class="form-field"><label>Categoría o equipo</label><input type="text" name="categoria"></div>
+      <div class="form-field">
+        <label>Área relacionada</label>
+        <select name="area">
+          <option>Captación</option><option>Competición</option><option>Promoción</option><option>Metodología</option>
+          <option>Modelo de juego</option><option>Técnicos formadores</option><option>Control del método</option>
+          <option>MIT IN</option><option>MIT OUT</option><option>MIT PRO</option><option>Gamificación</option>
+          <option>Análisis y evaluación</option><option>Denominación de Origen</option><option>Normas operativas</option>
+          <option>Comunicación con familias</option><option>Instalaciones / espacios</option><option>Material</option><option>Otro</option>
+        </select>
+      </div>
+      <div class="form-field">
+        <label>Tipo de mensaje</label>
+        <select name="tipo">
+          <option>Sugerencia de mejora</option><option>Situación detectada</option><option>Duda metodológica</option>
+          <option>Idea para entrenamientos</option><option>Propuesta de contenido</option><option>Necesidad del equipo</option>
+          <option>Comentario sobre jugador</option><option>Otro</option>
+        </select>
+      </div>
+      <div class="form-field full"><label>Mensaje</label><textarea name="mensaje" placeholder="Cuéntanos con naturalidad qué has visto, qué propones o qué necesitas mejorar." required></textarea></div>
+      <div class="form-field">
+        <label>Urgencia</label>
+        <select name="urgencia"><option>Baja</option><option>Media</option><option>Alta</option></select>
+      </div>
+      <div class="form-field">
+        <label>¿Quieres que te respondamos?</label>
+        <div class="form-radio-row">
+          <label><input type="radio" name="respuesta" value="Sí" checked> Sí</label>
+          <label><input type="radio" name="respuesta" value="No hace falta"> No hace falta</label>
+        </div>
+      </div>
+      <div class="form-field full"><label>Email o teléfono de contacto (opcional)</label><input type="text" name="contacto"></div>
+      <div class="form-actions">
+        <button type="submit" class="sbtn primary">Enviar mensaje</button>
+        <a class="sbtn wa" href="https://wa.me/34672802334?text=Hola%20Dani%2C%20soy%20entrenador%20de%20UD%20Lanzarote%20Base%20y%20tengo%20una%20duda%20sobre%20el%20proyecto." target="_blank" rel="noopener noreferrer">Contactar por WhatsApp</a>
+      </div>
+    </div>
+    <div class="form-success" id="comm-success">Gracias. Tu aporte ayuda a construir una mejor cantera.</div>
+  </form>
+
+  <div class="sec-actions rv d4">
+    <button class="sbtn ghost-dark" data-target="contenido">Volver al contenido</button>
+    <button class="sbtn ghost-dark" data-target="metodologia">Ir a metodología</button>
+    <button class="sbtn ghost-dark" data-target="normas-operativas">Ir a normas operativas</button>
+    <a class="sbtn wa" href="https://wa.me/34672802334?text=Hola%20Dani%2C%20soy%20entrenador%20de%20UD%20Lanzarote%20Base%20y%20tengo%20una%20duda%20sobre%20el%20proyecto." target="_blank" rel="noopener noreferrer">Contactar por WhatsApp</a>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════════════════
+     25 · CENTRO DE CONTENIDO COMPARTIDO — #centro-contenido
+════════════════════════════════════════════════════ -->
+<section class="slide" id="centro-contenido" style="background:var(--black); flex-direction:column;">
+  <div class="wm-crest"><img src="assets/logos/crest-official.png" alt=""></div>
+  <span class="eyebrow gold rv">Espacio vivo de aprendizaje</span>
+  <h2 class="headline white rv d1">Centro de contenido <em>del entrenador</em></h2>
+  <div class="rule rv d1"></div>
+  <p class="body-text light rv d2" style="max-width:680px;">Ideas, recursos y contenidos para seguir creciendo juntos. Este espacio lo alimenta Dirección Deportiva durante la temporada, incorporando también propuestas de los entrenadores. No es una biblioteca cerrada: es un espacio vivo.</p>
+
+  <div class="chub-filters rv d3">
+    <button class="filter-btn active" data-filter="todos">Todos</button>
+    <button class="filter-btn" data-filter="Metodología">Metodología</button>
+    <button class="filter-btn" data-filter="Modelo de juego">Modelo de juego</button>
+    <button class="filter-btn" data-filter="MIT">MIT</button>
+    <button class="filter-btn" data-filter="Análisis">Análisis</button>
+    <button class="filter-btn" data-filter="Valores">Valores</button>
+    <button class="filter-btn" data-filter="Liderazgo">Liderazgo</button>
+    <button class="filter-btn" data-filter="Tareas">Tareas</button>
+  </div>
+
+  <div class="chub-grid rv d4" id="chub-grid">
+    <div class="chub-card" data-cat="Metodología">
+      <div class="chub-badges"><span class="chub-badge">Metodología</span><span class="chub-badge type">Artículo / guía</span></div>
+      <h4>Construir una sesión con propósito</h4>
+      <p>Ideas para conectar objetivo, tarea, corrección y comportamiento del jugador.</p>
+      <a class="chub-link" href="#">Ver recurso →</a>
+    </div>
+    <div class="chub-card" data-cat="Liderazgo">
+      <div class="chub-badges"><span class="chub-badge">Formación del entrenador</span><span class="chub-badge type">Vídeo / charla</span></div>
+      <h4>La corrección que ayuda, no la que bloquea</h4>
+      <p>Reflexión sobre cómo comunicar mejor con el jugador durante la sesión.</p>
+      <a class="chub-link" href="#">Ver recurso →</a>
+    </div>
+    <div class="chub-card" data-cat="MIT">
+      <div class="chub-badges"><span class="chub-badge">MIT IN</span><span class="chub-badge type">Tarea</span></div>
+      <h4>Ejemplo de MIT IN aplicado al tiro</h4>
+      <p>Ejemplo práctico para trabajar finalización dentro del entrenamiento colectivo.</p>
+      <a class="chub-link" href="#">Ver recurso →</a>
+    </div>
+    <div class="chub-card" data-cat="Valores">
+      <div class="chub-badges"><span class="chub-badge">Denominación de Origen</span><span class="chub-badge type">Reflexión</span></div>
+      <h4>Valores que se ven en el campo</h4>
+      <p>Ejemplos de comportamientos que reflejan identidad, respeto y compromiso.</p>
+      <a class="chub-link" href="#">Ver recurso →</a>
+    </div>
+    <div class="chub-card" data-cat="Análisis">
+      <div class="chub-badges"><span class="chub-badge">Análisis</span><span class="chub-badge type">Guía</span></div>
+      <h4>Cómo usar el vídeo sin señalar al jugador</h4>
+      <p>Claves para convertir el análisis en una herramienta de aprendizaje.</p>
+      <a class="chub-link" href="#">Ver recurso →</a>
+    </div>
+  </div>
+
+  <p class="tagline rv d5" style="color:var(--gold); margin-top:22px;">"Lo que uno aprende, puede ayudar a todos."</p>
+  <div class="sec-actions rv d5">
+    <button class="sbtn gold" data-target="comunicacion">Proponer contenido</button>
+    <button class="sbtn ghost-dark" data-target="contenido">Volver al contenido</button>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════════════════
+     26 · CONTACTO DIRECTO — #contacto
+════════════════════════════════════════════════════ -->
+<section class="slide" id="contacto" style="background:var(--sand); flex-direction:column; text-align:center;">
+  <div style="width:100%;max-width:640px;">
+    <span class="eyebrow muted-dark rv">Estamos para ayudarte</span>
+    <h2 class="headline black rv d1">¿Tienes una duda, propuesta <em>o necesitas aclarar algo?</em></h2>
+    <div class="rule rv d1" style="margin:16px auto;"></div>
+    <p class="body-text dark rv d2">Dirección Deportiva está disponible para cualquier consulta relacionada con la metodología, el equipo o el proyecto.</p>
+    <div class="sec-actions rv d3" style="justify-content:center; margin-top:28px;">
+      <a class="sbtn primary" href="https://wa.me/34672802334?text=Hola%20Dani%2C%20soy%20entrenador%20de%20UD%20Lanzarote%20Base%20y%20tengo%20una%20duda%20sobre%20el%20proyecto." target="_blank" rel="noopener noreferrer">Contactar con Dirección Deportiva</a>
+      <button class="sbtn ghost-light" data-target="comunicacion">Enviar sugerencia</button>
+      <button class="sbtn ghost-light" data-target="contenido">Volver al contenido</button>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════════════════
+     27 · COMPROMISO FINAL — #compromiso
+════════════════════════════════════════════════════ -->
+<section class="slide" id="compromiso" style="background:var(--blue-d); flex-direction:column; text-align:center;">
+  <canvas id="close-cv" style="position:absolute;inset:0;width:100%;height:100%;z-index:1;pointer-events:none;"></canvas>
+  <div style="position:absolute;inset:0;background:radial-gradient(ellipse 60% 50% at 50% 50%, rgba(10,78,150,.35) 0%, transparent 70%); z-index:0;"></div>
+  <div class="close-inner">
+    <img class="rv" style="width:100px;height:auto;filter:drop-shadow(0 6px 32px rgba(0,0,0,.5)) drop-shadow(0 0 16px rgba(201,162,39,.3));animation:float 4s ease-in-out infinite;margin-bottom:26px;" src="assets/logos/crest-official.png" alt="UD Lanzarote">
+    <div class="rv d1" style="width:64px;height:3px;background:linear-gradient(90deg,var(--red),var(--gold));border-radius:2px;margin:0 auto 20px"></div>
+    <h2 class="rv d2" style="font-family:'Montserrat',sans-serif;font-weight:900;font-size:clamp(26px,4vw,48px);color:var(--white);line-height:1.15;">Somos un equipo de entrenadores.<br>Cada sesión cuenta. Cada mensaje cuenta.<br>Cada niño <em style="color:var(--gold);">cuenta</em>.</h2>
+    <p class="rv d3" style="font-size:15px;color:rgba(255,255,255,.45);margin-top:16px;letter-spacing:.5px;">"La grandeza se forma en la base."</p>
+    <div class="rv d4" style="margin-top:36px;opacity:.4;"><img src="assets/logos/ud_lanzarote_base_logo.png" alt="UD Lanzarote Base" style="height:22px;filter:brightness(0) invert(1);margin:0 auto;"></div>
+    <div class="sec-actions rv d5" style="justify-content:center; margin-top:32px;">
+      <button class="sbtn ghost-dark" data-target="contenido">Volver al contenido</button>
+      <button class="sbtn gold" data-target="comunicacion">Enviar sugerencia</button>
+      <a class="sbtn wa" href="https://wa.me/34672802334?text=Hola%20Dani%2C%20soy%20entrenador%20de%20UD%20Lanzarote%20Base%20y%20tengo%20una%20duda%20sobre%20el%20proyecto." target="_blank" rel="noopener noreferrer">Contactar</a>
+      <button class="sbtn ghost-dark" id="btn-restart">Reiniciar presentación</button>
+    </div>
+  </div>
+</section>
+
+<script defer src="assets/js/main.js"></script>
+</body>
+</html>
